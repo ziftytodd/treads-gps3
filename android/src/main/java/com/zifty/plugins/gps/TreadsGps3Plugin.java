@@ -87,19 +87,19 @@ public class TreadsGps3Plugin extends Plugin {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ConnectivityManager connMgr = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
             switch (connMgr.getRestrictBackgroundStatus()) {
-                case RESTRICT_BACKGROUND_STATUS_ENABLED:
+                case ConnectivityManager.RESTRICT_BACKGROUND_STATUS_ENABLED:
                     // The app is whitelisted. Wherever possible,
                     // the app should use less data in the foreground and background.
                     data = "false";
                     break;
 
-                case RESTRICT_BACKGROUND_STATUS_WHITELISTED:
+                case ConnectivityManager.RESTRICT_BACKGROUND_STATUS_WHITELISTED:
                     // Background data usage is blocked for this app. Wherever possible,
                     // the app should also use less data in the foreground.
                     data = "true";
                     break;
 
-                case RESTRICT_BACKGROUND_STATUS_DISABLED:
+                case ConnectivityManager.RESTRICT_BACKGROUND_STATUS_DISABLED:
                     // Data Saver is disabled. Since the device is connected to a
                     // metered network, the app should use less data wherever possible.
                     data = "disabled";
