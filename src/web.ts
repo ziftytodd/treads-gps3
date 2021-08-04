@@ -7,4 +7,20 @@ export class TreadsGps3Web extends WebPlugin implements TreadsGps3Plugin {
     console.log('ECHO', options);
     return options;
   }
+
+  async checkStatus(): Promise<{ dataSaver: string, ignoreBatteryOptimization: string }> {
+    return { dataSaver: 'false', ignoreBatteryOptimization: 'false' };
+  }
+
+  async keepWebviewAwake(): Promise<{ success: boolean }> {
+    return { success: false };
+  }
+
+  async requestIgnoreBatteryOptimization(): Promise<{ success: boolean }> {
+    return { success: false };
+  }
+
+  async requestIgnoreDataSaver(): Promise<{ success: boolean }> {
+    return { success: false };
+  }
 }
